@@ -1,5 +1,5 @@
 ***
-## git notes
+# git cheatsheet
 ***
 ### General Workflow..
 
@@ -12,7 +12,7 @@
 ### Commands Overview..
 
 #### git init
-> Creates a new Git repository
+>> Creates a new Git repository
 
 #### git status
 >>Inspects the contents of the working directory and staging area
@@ -30,16 +30,16 @@
 >>Shows a list of all previous commits
 
 #### git show HEAD
->>Display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.
+    Display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.
 
 #### git checkout HEAD
->>Will OVERWRITE any changes to the local file and retrieve the most recent committed version from the repository.
+    Will OVERWRITE any changes to the local file and retrieve the most recent committed version from the repository.
 
 #### git checkout branchname
->>Changes current working branch to branchname
+    Changes current working branch to branchname
 
 #### git reset HEAD filename
->>This command resets the file in the staging area to be the same as the HEAD commit. It does not discard file changes from the working directory, it just removes them from the staging area.
+    This command resets the file in the staging area to be the same as the HEAD commit. It does not discard file changes from the working directory, it just removes them from the staging area.
 
 #### git reset SHA
 >>Resets to a previous commit identified by the first 7 digits of its SHA from 'git log'. Conceptually..
