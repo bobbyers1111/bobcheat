@@ -82,3 +82,7 @@
 >>--global: applies to every repository for the current user on current system.
 
 >>--local: applies only to the current repository (highest precedence).
+
+#### git config core.editor <editor>
+>Set editor for git operations requiring an editor
+
