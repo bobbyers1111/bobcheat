@@ -11,6 +11,12 @@
 ***
 ### Commands Overview..
 
+#### git help gitcmd
+>Displays in-depth help
+
+#### git gitcmd -h
+>Displays command line syntax only
+
 #### git init
 > Creates a new Git repository
 
