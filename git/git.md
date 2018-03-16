@@ -73,3 +73,10 @@
 
 #### git push origin localbr
 >>Pushes your local changes to the branch specified by 'origin'.
+
+#### git config
+>>Get and set repository or global options.
+>>1.--system: apply command to every repository for every user on current system.
+>>1.--global: applies to every repository for the current user on current system.
+>>1.--local: applies only to the current repository (highest precedence).
+
