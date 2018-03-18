@@ -9,6 +9,45 @@
 4. Fetch and merge from the remote again (in case new commits were made while you were working)
 5. Push your branch up to the remote for review
 ***
+### Git Objects
+
+>Stored in the *Object Store* and consists of the following objects..
+
+1. **Commit Object**
+    1. Is a small text file
+    1. Is all git needs to rebuild the full contents of a commit
+    1. Stores the following information..
+        1. Commit user information
+        1. Commit message
+        1. Reference to the commit's parent(s)
+        1. Reference to the root tree of the project
+
+2. **Annotated tag**
+> Is a reference to a specific commit
+
+3. **Tree**
+> List of directories and files inside a project
+
+4. **Blob**
+> Contents of a any file being managed by git
+***
+### Git IDs
+
+* A git ID is the name of a git object
+
+* Stored as a 40-char hex string
+
+* Often displayed as only the first 7 characters
+
+* You may use the first few ID chars (min 4) in git so long as it is unique within the repository
+
+* Uses SHA1 algorithm
+
+* Can manually compute a SHA1 for a file with..
+
+>git hash-object *file*
+
+***
 ### Commands Overview..
 
 #### git help gitcmd
