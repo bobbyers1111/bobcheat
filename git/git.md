@@ -8,6 +8,30 @@
 3. Develop the feature on your branch and commit your work
 4. Fetch and merge from the remote again (in case new commits were made while you were working)
 5. Push your branch up to the remote for review
+
+***
+### Git Terminology
+
+- A *clone* is a local copy of a remote repository
+
+- *origin* is an alias for the remote repository's URL
+
+- Everything needed to access the remote is in the .git/config file. Example..
+
+>    [core]  
+>>	    bare = false  
+>>	    repositoryformatversion = 0  
+>>	    filemode = true  
+>>	    logallrefupdates = true  
+
+>    [remote "origin"]  
+>>	    url = https://github.com/bobbyers1111/bobcheat.git  
+>>	    fetch = +refs/heads/*:refs/remotes/origin/*  
+
+>    [branch "master"]  
+>>	    remote = origin  
+>>	    merge = refs/heads/master  
+
 ***
 ### Git Objects
 
@@ -30,6 +54,7 @@
 
 4. **Blob**
 > Contents of a any file being managed by git
+
 ***
 ### Git IDs
 
@@ -50,38 +75,71 @@
 ***
 ### Commands Overview..
 
-#### git help gitcmd
+#### git help *gitcmd*
 >Displays in-depth help
 
-#### git gitcmd -h
+#### git *gitcmd* -h
 >Displays command line syntax only
-
-#### git init
-> Creates a new Git repository
-
-#### git status
->Inspects the contents of the working directory and staging area
 
 #### git add
 >Stages files from the working directory to the staging area
 
-#### git diff
->Shows the difference between the working directory and the staging area
+#### git branch
+>Displays the branch upon which you're currently working
 
-#### git commit
->Permanently stores file changes from the staging area in the repository
+#### git branch branchname
+>Creates a new branch
 
-#### git log
->Shows a list of all previous commits
+#### git branch -d branchname
+>Deletes an old branch
 
-#### git show HEAD
->Display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.
+#### git checkout branchname
+>Changes current working branch to branchname
 
 #### git checkout HEAD
 >Will OVERWRITE any changes to the local file and retrieve the most recent committed version from the repository.
 
-#### git checkout branchname
->Changes current working branch to branchname
+#### git clone remote local
+>Makes a local copy of a remote branch
+
+#### git commit
+>Permanently stores file changes from the staging area in the repository
+
+#### git config
+>Get and set repository or global options.
+
+>>--system: apply command to every repository for every user on current system.
+
+>>--global: applies to every repository for the current user on current system.
+
+>>--local: applies only to the current repository (highest precedence).
+
+
+#### git config core.editor <editor>
+>Set editor for git operations requiring an editor
+
+#### git diff
+>Shows the difference between the working directory and the staging area
+
+#### git fetch
+>Retrieve any changes that may have been made to the clone's origin. Changed files are placed in a REMOTE BRANCH.
+
+#### git init
+> Creates a new Git repository
+
+#### git log
+>Shows a list of all previous commits
+
+#### git merge branchname
+>Merges changes from branchname into the current working branch.
+
+#### git push [-u] remote localbr
+>Pushes your local changes to the branch specified by *remote*  
+>*remote* can be either an alias (e.g., *origin*) or a full URL  
+>Use '-u' to enable tracking so git will warn you of out-of-sync files  
+
+#### get remote -v
+>Lists the known remotes of the files in the current working repository. Each file listed at least twice - once as a fetch, the other as a push.
 
 #### git reset HEAD filename
 >This command resets the file in the staging area to be the same as the HEAD commit. It does not discard file changes from the working directory, it just removes them from the staging area.
@@ -95,52 +153,29 @@
               After reset..
               [A] ------ [B] ------ [HEAD]
 
-#### git branch
->Displays the branch upon which you're currently working
+#### git show HEAD
+>Display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.
 
-#### git branch branchname
->Creates a new branch
+#### git status
+>Inspects the contents of the working directory and staging area
 
-#### git branch -d branchname
->Deletes an old branch
-
-#### git merge branchname
->Merges changes from branchname into the current working branch.
-
-#### git clone remote local
->Makes a local copy of a remote branch
-
-#### get remote -v
->Lists the known remotes of the files in the current working repository. Each file listed at least twice - once as a fetch, the other as a push.
-
-#### git fetch
->Retrieve any changes that may have been made to the clone's origin. Changed files are placed in a REMOTE BRANCH.
-
-#### git push origin localbr
->Pushes your local changes to the branch specified by 'origin'.
-
-#### git config
->Get and set repository or global options.
-
->>--system: apply command to every repository for every user on current system.
-
->>--global: applies to every repository for the current user on current system.
-
->>--local: applies only to the current repository (highest precedence).
-
-#### git config core.editor <editor>
->Set editor for git operations requiring an editor
 ***
-#### Create a new repository from command line
+#### Create a *new* repository from command line..
 
-    echo "# reposC" >> README.md
-    git init
-    git add README.md
-    git commit -m "first commit"
-    git remote add origin https://github.com/bobbyers1111/reposC.git
-    git push -u origin master
+>    echo "# reposC" >> README.md
 
-    …or push an existing repository from the command line
+>    git init
 
-    git remote add origin https://github.com/bobbyers1111/reposC.git
-    git push -u origin master
+>    git add README.md
+
+>    git commit -m "first commit"
+
+>    git remote add origin https://github.com/bobbyers1111/reposC.git
+
+>    git push -u origin master
+
+#### Push an *existing* repository from the command line..
+
+>    git remote add origin https://github.com/bobbyers1111/reposC.git
+
+>    git push -u origin master
