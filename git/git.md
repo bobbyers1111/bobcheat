@@ -33,6 +33,7 @@
 >>	    merge = refs/heads/master  
 
 ***
+<<<<<<< Updated upstream
 ### Git Objects
 
 >Stored in the *Object Store* and consists of the following objects..
@@ -74,7 +75,20 @@
 
 ***
 ### Commands Overview..
+=======
+### remote, local, etc.
+- Two fundamental starting scenarios..
+- - Already have a local repository => add the remote
+>(the add command also sets up an alias for the remote; e.g., 'origin')  
+>>git remote add origin https://github.com/bobbyers1111/reposC.git  
+>>git push -u origin master  
+>>
+- - Already have a remote repository => clone the remote
+>>git clone https://bitbucket.org/atlassian_tutorial/helloworld.git  
+>>
+>>>>>>> Stashed changes
 
+<<<<<<< Updated upstream
 #### git help *gitcmd*
 >Displays in-depth help
 
@@ -101,10 +115,30 @@
 
 #### git clone remote local
 >Makes a local copy of a remote branch
+=======
+- A *clone* is a local copy of a remote repository
 
-#### git commit
->Permanently stores file changes from the staging area in the repository
+- *origin* is an alias for the remote repository's URL
 
+- Everything needed to access the remote is in the .git/config file. Example..
+
+
+>    [core]  
+>>	    bare = false  
+>>	    repositoryformatversion = 0  
+>>	    filemode = true  
+>>	    logallrefupdates = true  
+
+>    [remote "origin"]  
+>>	    url = https://github.com/bobbyers1111/bobcheat.git  
+>>	    fetch = +refs/heads/*:refs/remotes/origin/*  
+>>>>>>> Stashed changes
+
+>    [branch "master"]  
+>>	    remote = origin  
+>>	    merge = refs/heads/master  
+
+<<<<<<< Updated upstream
 #### git config
 >Get and set repository or global options.
 
@@ -115,6 +149,111 @@
 >>--local: applies only to the current repository (highest precedence).
 
 
+#### git config core.editor <editor>
+>Set editor for git operations requiring an editor
+
+#### git diff
+>Shows the difference between the working directory and the staging area
+
+#### git fetch
+>Retrieve any changes that may have been made to the clone's origin. Changed files are placed in a REMOTE BRANCH.
+
+#### git init
+> Creates a new Git repository
+
+#### git log
+>Shows a list of all previous commits
+
+#### git merge branchname
+>Merges changes from branchname into the current working branch.
+
+#### git push [-u] remote localbr
+>Pushes your local changes to the branch specified by *remote*  
+>*remote* can be either an alias (e.g., *origin*) or a full URL  
+>Use '-u' to enable tracking so git will warn you of out-of-sync files  
+
+#### get remote -v
+>Lists the known remotes of the files in the current working repository. Each file listed at least twice - once as a fetch, the other as a push.
+=======
+***
+#### Create a new repository from command line
+
+    echo "# reposC" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin https://github.com/bobbyers1111/reposC.git
+    git push -u origin master
+
+    …or push an existing repository from the command line
+
+    git remote add origin https://github.com/bobbyers1111/reposC.git
+    git push -u origin master
+>>>>>>> Stashed changes
+
+***
+### Commands Overview..
+
+#### git help *gitcmd*
+>Displays in-depth help
+
+#### git *gitcmd* -h
+>Displays command line syntax only
+
+#### git add
+>Stages files from the working directory to the staging area
+
+<<<<<<< Updated upstream
+#### git show HEAD
+>Display everything the git log command displays for the HEAD commit, plus all the file changes that were committed.
+
+#### git status
+>Inspects the contents of the working directory and staging area
+
+***
+#### Create a *new* repository from command line..
+
+>    echo "# reposC" >> README.md
+=======
+#### git branch
+>Displays the branch upon which you're currently working
+
+#### git branch branchname
+>Creates a new branch
+
+#### git branch -d branchname
+>Deletes an old branch
+
+#### git checkout branchname
+>Changes current working branch to branchname
+
+#### git checkout HEAD
+>Will OVERWRITE any changes to the local file and retrieve the most recent committed version from the repository.
+
+#### git clone remote local
+>Makes a local copy of a remote branch
+
+#### git commit
+>Permanently stores file changes from the staging area in the repository
+>>>>>>> Stashed changes
+
+>    git init
+
+>    git add README.md
+
+>    git commit -m "first commit"
+
+>    git remote add origin https://github.com/bobbyers1111/reposC.git
+
+<<<<<<< Updated upstream
+>    git push -u origin master
+
+#### Push an *existing* repository from the command line..
+
+>    git remote add origin https://github.com/bobbyers1111/reposC.git
+
+>    git push -u origin master
+=======
 #### git config core.editor <editor>
 >Set editor for git operations requiring an editor
 
@@ -158,24 +297,4 @@
 
 #### git status
 >Inspects the contents of the working directory and staging area
-
-***
-#### Create a *new* repository from command line..
-
->    echo "# reposC" >> README.md
-
->    git init
-
->    git add README.md
-
->    git commit -m "first commit"
-
->    git remote add origin https://github.com/bobbyers1111/reposC.git
-
->    git push -u origin master
-
-#### Push an *existing* repository from the command line..
-
->    git remote add origin https://github.com/bobbyers1111/reposC.git
-
->    git push -u origin master
+>>>>>>> Stashed changes
